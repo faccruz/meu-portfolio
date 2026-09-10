@@ -37,7 +37,7 @@ export default function FabFitPage() {
             <div className="text-center p-4">
               <span className="block text-2xl mb-1">📊</span>
               <p className="text-slate-400 font-medium">Dashboard de Métricas</p>
-              <p className="text-xs text-slate-600 mt-1">[Coloque a foto aqui na pasta public]</p>
+              <p className="text-xs text-slate-600 mt-1">public/Dashboard.png</p>
             </div>
           </div>
 
@@ -46,7 +46,7 @@ export default function FabFitPage() {
             <div className="text-center p-4">
               <span className="block text-2xl mb-1">📱</span>
               <p className="text-slate-400 font-medium">Interface de Usuário</p>
-              <p className="text-xs text-slate-600 mt-1">[Coloque a foto aqui na pasta public]</p>
+              <p className="text-xs text-slate-600 mt-1">public/CadAluno.png</p>
             </div>
           </div>
         </div>
