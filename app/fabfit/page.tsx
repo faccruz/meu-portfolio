@@ -26,43 +26,32 @@ export default function FabFitPage() {
 
       {/* Seção de Galeria de Imagens */}
       <section className="mb-12">
-        <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-semibold">
-          DEMONSTRAÇÃO DO SISTEMA
-        </h2>
-        
-        <div className="grid md:grid-cols-2 gap-4">
-          {/* Espaço para Imagem 1 */}
-          <div className="bg-slate-900 border border-slate-800 rounded-xl h-56 flex items-center justify-center text-slate-500 text-sm overflow-hidden group">
-            {/* Se tiver imagens publicadas, substitua a div abaixo por: <img src="/fabfit-1.png" alt="FabFit Dashboard" className="w-full h-full object-cover" /> */}
-            <div className="text-center p-4">
-              <span className="block text-2xl mb-1">📊</span>
-              <p className="text-slate-400 font-medium">Dashboard de Métricas</p>
-              <p className="text-xs text-slate-600 mt-1">
-                <img
-                    src="/Dashboard.png"
-                    alt="Dashboard FabFit"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </p>
-            </div>
-          </div>
+  <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-semibold">
+    DEMONSTRAÇÃO DO SISTEMA
+  </h2>
+  
+  <div className="grid md:grid-cols-2 gap-6">
+    {/* Card Imagem 1 */}
+    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center overflow-hidden group">
+      <img 
+        src="/fabfit-dashboard.png" 
+        alt="Dashboard de Métricas - FabFit" 
+        className="w-full h-auto max-h-[350px] object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300"
+      />
+      <p className="text-xs text-slate-400 mt-2 font-medium">Dashboard de Métricas</p>
+    </div>
 
-          {/* Espaço para Imagem 2 */}
-          <div className="bg-slate-900 border border-slate-800 rounded-xl h-56 flex items-center justify-center text-slate-500 text-sm overflow-hidden group">
-            <div className="text-center p-4">
-              <span className="block text-2xl mb-1">📱</span>
-              <p className="text-slate-400 font-medium">Interface de Usuário</p>
-              <p className="text-xs text-slate-600 mt-1">
-                <img 
-                    src="/CadAluno.png" 
-                    alt="Tela de Cadastro de Aluno - FabFit" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Card Imagem 2 */}
+    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center overflow-hidden group">
+      <img 
+        src="/CadAluno.png" 
+        alt="Cadastro de Aluno - FabFit" 
+        className="w-full h-auto max-h-[350px] object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300"
+      />
+      <p className="text-xs text-slate-400 mt-2 font-medium">Cadastro de Aluno</p>
+    </div>
+  </div>
+</section>
 
       {/* Destaques Técnicos & Botão de Compra */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
