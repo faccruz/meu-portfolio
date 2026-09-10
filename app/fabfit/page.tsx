@@ -1,5 +1,12 @@
 import Link from 'next/link';
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "FabFit | Fábio Cruz",
+  description: "Plataforma de Gestão e Acompanhamento Fitness.",
+};
+
 export default function FabFitPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 p-8 max-w-4xl mx-auto font-sans">
