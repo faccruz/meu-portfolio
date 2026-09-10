@@ -26,32 +26,36 @@ export default function FabFitPage() {
 
       {/* Seção de Galeria de Imagens */}
       <section className="mb-12">
-  <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-semibold">
-    DEMONSTRAÇÃO DO SISTEMA
-  </h2>
-  
-  <div className="grid md:grid-cols-2 gap-6">
-    {/* Card Imagem 1 */}
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center overflow-hidden group">
-      <img 
-        src="/fabfit-dashboard.png" 
-        alt="Dashboard de Métricas - FabFit" 
-        className="w-full h-auto max-h-[350px] object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300"
-      />
-      <p className="text-xs text-slate-400 mt-2 font-medium">Dashboard de Métricas</p>
-    </div>
+        <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-4 font-semibold">
+          DEMONSTRAÇÃO DO SISTEMA
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Card Imagem 1 */}
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
+            <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
+              <img 
+                src="/Dashboard.png" 
+                alt="Dashboard de Métricas - FabFit" 
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p className="text-xs text-slate-400 mt-3 font-medium">Dashboard de Métricas</p>
+          </div>
 
-    {/* Card Imagem 2 */}
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-center overflow-hidden group">
-      <img 
-        src="/CadAluno.png" 
-        alt="Cadastro de Aluno - FabFit" 
-        className="w-full h-auto max-h-[350px] object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300"
-      />
-      <p className="text-xs text-slate-400 mt-2 font-medium">Cadastro de Aluno</p>
-    </div>
-  </div>
-</section>
+          {/* Card Imagem 2 */}
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
+            <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
+              <img 
+                src="/CadAluno.png" 
+                alt="Cadastro de Aluno - FabFit" 
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p className="text-xs text-slate-400 mt-3 font-medium">Cadastro de Aluno</p>
+          </div>
+        </div>
+      </section>
 
       {/* Destaques Técnicos & Botão de Compra */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
