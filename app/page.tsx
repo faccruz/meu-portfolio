@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 p-8 max-w-4xl mx-auto font-sans">
@@ -15,7 +17,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Seção Sobre Mim (Texto mais limpo) */}
+      {/* Seção Sobre Mim */}
       <section className="py-10">
         <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-3 font-semibold">SOBRE MIM</h2>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl">
@@ -31,26 +33,55 @@ export default function Home() {
         
         <div className="grid md:grid-cols-2 gap-6">
           
-          {/* Card de Projeto .NET (Estilo Glassmorphism Suave) */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group">
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                API RESTful .NET / EF Core
-              </h3>
-              {/* Ícone sutil indicando projeto backend */}
-              <span className="text-slate-600 text-xs font-mono group-hover:text-cyan-500">[BACKEND]</span>
+          {/* Card 1: FabFit */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  FabFit
+                </h3>
+                <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[PRODUTO]</span>
+              </div>
+              
+              <p className="text-slate-400 text-base mb-6 leading-relaxed">
+                Plataforma completa de gestão fitness e acompanhamento de treinos. Inclui métricas, dashboard intuitivo e ecossistema escalável.
+              </p>
+              
+              <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Web</span>
+              </div>
             </div>
             
-            <p className="text-slate-400 text-base mb-6 leading-relaxed">
-              Sistema de gestão de licenças e automações com autenticação JWT, PostgreSQL 
-              e suporte a contêineres Docker para deploy simplificado.
-            </p>
-            
-            <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
-              <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
-              <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET 8</span>
-              <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">EF Core</span>
-              <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Docker</span>
+            <div className="border-t border-slate-800 pt-5">
+              <Link href="/fabfit" className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm hover:underline flex items-center gap-1.5">
+                Ver detalhes e demonstração →
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 2: API RESTful .NET / EF Core */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  API RESTful .NET / EF Core
+                </h3>
+                <span className="text-slate-600 text-xs font-mono group-hover:text-cyan-500">[BACKEND]</span>
+              </div>
+              
+              <p className="text-slate-400 text-base mb-6 leading-relaxed">
+                Sistema de gestão de licenças e automações com autenticação JWT, PostgreSQL 
+                e suporte a contêineres Docker para deploy simplificado.
+              </p>
+              
+              <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET 8</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">EF Core</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Docker</span>
+              </div>
             </div>
             
             <div className="flex gap-5 text-sm font-semibold border-t border-slate-800 pt-5">
@@ -60,7 +91,7 @@ export default function Home() {
               </a>
               <a href="#" className="text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1.5">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                Contato / Vendas
+                Contato
               </a>
             </div>
           </div>
