@@ -37,7 +37,13 @@ export default function FabFitPage() {
             <div className="text-center p-4">
               <span className="block text-2xl mb-1">📊</span>
               <p className="text-slate-400 font-medium">Dashboard de Métricas</p>
-              <p className="text-xs text-slate-600 mt-1">public/Dashboard.png</p>
+              <p className="text-xs text-slate-600 mt-1">
+                <img
+                    src="/Dashboard.png"
+                    alt="Dashboard FabFit"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </p>
             </div>
           </div>
 
@@ -46,7 +52,13 @@ export default function FabFitPage() {
             <div className="text-center p-4">
               <span className="block text-2xl mb-1">📱</span>
               <p className="text-slate-400 font-medium">Interface de Usuário</p>
-              <p className="text-xs text-slate-600 mt-1">public/CadAluno.png</p>
+              <p className="text-xs text-slate-600 mt-1">
+                <img 
+                    src="/CadAluno.png" 
+                    alt="Tela de Cadastro de Aluno - FabFit" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                </p>
             </div>
           </div>
         </div>
