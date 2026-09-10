@@ -55,7 +55,7 @@ export default function FabFitPage() {
       {/* Destaques Técnicos & Botão de Compra */}
       <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
-          <h3 className="text-xl font-bold text-white mb-2">Adquira a Licença / Código Fonte</h3>
+          <h3 className="text-xl font-bold text-white mb-2">Adquira a Licença</h3>
           <p className="text-slate-400 text-sm max-w-md">
             Disponível para integração ou aquisição do projeto completo com documentação e suporte de implantação.
           </p>
@@ -63,7 +63,7 @@ export default function FabFitPage() {
 
         {/* Link para Venda / Checkout / WhatsApp */}
         <a 
-          href="https://wa.me/5515999999999?text=Olá,%20tenho%20interesse%20no%20FabFit!" 
+          href="https://wa.me/5515997382437?text=Olá,%20tenho%20interesse%20no%20FabFit!" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20 whitespace-nowrap"
