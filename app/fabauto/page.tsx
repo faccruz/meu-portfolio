@@ -40,7 +40,7 @@ export default function FabAutoPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
             <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
               <img 
-                src="/fabauto-dashboard.png" 
+                src="/DashBoard_FabAuto.png" 
                 alt="Dashboard Principal - FabAuto" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
@@ -52,7 +52,7 @@ export default function FabAutoPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
             <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
               <img 
-                src="/fabauto-os.png" 
+                src="/OS_FabAuto.png" 
                 alt="Gestão de Ordens de Serviço - FabAuto" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
