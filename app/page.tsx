@@ -50,7 +50,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Web</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Desktop</span>
               </div>
             </div>
             
@@ -78,7 +78,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Web</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Desktop</span>
               </div>
             </div>
             
