@@ -61,24 +61,24 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 2: FabAuto-Licencas */}
+          {/* Card 2: FabAuto */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                  FabAuto Licenças
+                  FabAuto
                 </h3>
                 <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[PRODUTO]</span>
               </div>
               
               <p className="text-slate-400 text-base mb-6 leading-relaxed">
-                Sistema de gestão, controle e validação de licenças de software e automações, integrado a banco de dados em nuvem.
+                Sistema especializado para gestão de oficinas mecânicas e centros automotivos. Controle de ordens de serviço, clientes, veículos e estoque.
               </p>
               
               <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
                 <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Supabase</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Web</span>
               </div>
             </div>
             
