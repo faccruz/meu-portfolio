@@ -61,8 +61,36 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 2: API RESTful .NET / EF Core */}
+          {/* Card 2: FabAuto-Licencas */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  FabAuto Licenças
+                </h3>
+                <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[PRODUTO]</span>
+              </div>
+              
+              <p className="text-slate-400 text-base mb-6 leading-relaxed">
+                Sistema de gestão, controle e validação de licenças de software e automações, integrado a banco de dados em nuvem.
+              </p>
+              
+              <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
+                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Supabase</span>
+              </div>
+            </div>
+            
+            <div className="border-t border-slate-800 pt-5">
+              <Link href="/fabauto" className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm hover:underline flex items-center gap-1.5">
+                Ver detalhes e demonstração →
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 3: API RESTful .NET / EF Core */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between md:col-span-2">
             <div>
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
@@ -72,7 +100,7 @@ export default function Home() {
               </div>
               
               <p className="text-slate-400 text-base mb-6 leading-relaxed">
-                Sistema de gestão de licenças e automações com autenticação JWT, PostgreSQL 
+                Arquitetura backend para gestão de rotinas e automações com autenticação JWT, PostgreSQL 
                 e suporte a contêineres Docker para deploy simplificado.
               </p>
               
