@@ -1,13 +1,12 @@
 import Link from 'next/link';
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FabFit | Fábio Cruz",
-  description: "Plataforma de Gestão e Acompanhamento Fitness.",
+  title: "FabAuto | Fábio Cruz",
+  description: "Plataforma Completa para Gestão de Oficinas Mecânicas e Centros Automotivos.",
 };
 
-export default function FabFitPage() {
+export default function FabAutoPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 p-8 max-w-4xl mx-auto font-sans">
       
@@ -21,13 +20,12 @@ export default function FabFitPage() {
 
       {/* Cabeçalho do Projeto */}
       <section className="mb-10">
-        <h1 className="text-4xl font-extrabold text-white mb-3">FabFit</h1>
+        <h1 className="text-4xl font-extrabold text-white mb-3">FabAuto</h1>
         <p className="text-xl text-cyan-400 font-medium mb-4">
-          Plataforma de Gestão e Acompanhamento Fitness
+          Sistema Especializado para Gestão de Oficinas Mecânicas
         </p>
         <p className="text-slate-300 leading-relaxed text-lg">
-          O FabFit é uma solução completa desenvolvida para gestão de rotinas, acompanhamento de evolução 
-          e métricas de treino. Construído com arquitetura de alta performance, foco em usabilidade e API robusta.
+          O FabAuto é uma solução desenvolvida para otimizar a rotina operacional e financeira de oficinas mecânicas e centros automotivos. Permite o controle eficiente de ordens de serviço, cadastros de clientes e veículos, histórico de manutenções e controle de estoque de peças.
         </p>
       </section>
 
@@ -42,8 +40,8 @@ export default function FabFitPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
             <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
               <img 
-                src="/Dashboard.png" 
-                alt="Dashboard de Métricas - FabFit" 
+                src="/fabauto-dashboard.png" 
+                alt="Dashboard Principal - FabAuto" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -54,12 +52,12 @@ export default function FabFitPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col items-center justify-between overflow-hidden group">
             <div className="w-full aspect-video flex items-center justify-center overflow-hidden rounded-lg bg-slate-950">
               <img 
-                src="/CadAluno.png" 
-                alt="Cadastro de Aluno - FabFit" 
+                src="/fabauto-os.png" 
+                alt="Gestão de Ordens de Serviço - FabAuto" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <p className="text-xs text-slate-400 mt-3 font-medium">Cadastro de Aluno</p>
+            <p className="text-xs text-slate-400 mt-3 font-medium">Gestão de Ordens de Serviço</p>
           </div>
         </div>
       </section>
@@ -69,13 +67,13 @@ export default function FabFitPage() {
         <div>
           <h3 className="text-xl font-bold text-white mb-2">Adquira a Licença</h3>
           <p className="text-slate-400 text-sm max-w-md">
-            Disponível para integração ou aquisição do projeto completo com documentação e suporte de implantação.
+            Disponível para implantação na sua oficina ou aquisição do projeto completo com suporte e customização.
           </p>
         </div>
 
-        {/* Link para Venda / Checkout / WhatsApp */}
+        {/* Link para Venda / WhatsApp */}
         <a 
-          href="https://wa.me/5515997382437?text=Olá,%20tenho%20interesse%20no%20FabFit!" 
+          href="https://wa.me/5515997382437?text=Olá,%20tenho%20interesse%20no%20FabAuto!" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20 whitespace-nowrap"
