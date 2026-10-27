@@ -27,14 +27,14 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Seção de Projetos Refinada */}
+      {/* Seção de Projetos / SaaS Refinada */}
       <section className="py-10">
         <h2 className="text-sm uppercase tracking-widest text-slate-500 mb-6 font-semibold">PROJETOS EM DESTAQUE</h2>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Card 1: FabFit */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
@@ -43,26 +43,26 @@ export default function Home() {
                 <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[PRODUTO]</span>
               </div>
               
-              <p className="text-slate-400 text-base mb-6 leading-relaxed">
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
                 Plataforma completa de gestão fitness e acompanhamento de treinos. Inclui métricas, dashboard intuitivo e ecossistema escalável.
               </p>
               
-              <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Desktop</span>
+              <div className="flex flex-wrap gap-2 mb-6 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">.NET</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">C#</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">Desktop</span>
               </div>
             </div>
             
-            <div className="border-t border-slate-800 pt-5">
-              <Link href="/fabfit" className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm hover:underline flex items-center gap-1.5">
+            <div className="border-t border-slate-800 pt-4">
+              <Link href="/fabfit" className="text-cyan-400 hover:text-cyan-300 font-semibold text-xs hover:underline flex items-center gap-1.5">
                 Ver detalhes e demonstração →
               </Link>
             </div>
           </div>
 
           {/* Card 2: FabAuto */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
@@ -71,26 +71,54 @@ export default function Home() {
                 <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[PRODUTO]</span>
               </div>
               
-              <p className="text-slate-400 text-base mb-6 leading-relaxed">
-                Sistema especializado para gestão de oficinas mecânicas e centros automotivos. Controle de ordens de serviço, clientes, veículos e estoque.
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                Sistema para gestão de oficinas mecânicas e centros automotivos. Controle de ordens de serviço, clientes, veículos e estoque.
               </p>
               
-              <div className="flex flex-wrap gap-2.5 mb-8 text-xs text-cyan-200 font-mono">
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">C#</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">.NET</span>
-                <span className="bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">Desktop</span>
+              <div className="flex flex-wrap gap-2 mb-6 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">C#</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">.NET</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">Desktop</span>
               </div>
             </div>
             
-            <div className="border-t border-slate-800 pt-5">
-              <Link href="/fabauto" className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm hover:underline flex items-center gap-1.5">
+            <div className="border-t border-slate-800 pt-4">
+              <Link href="/fabauto" className="text-cyan-400 hover:text-cyan-300 font-semibold text-xs hover:underline flex items-center gap-1.5">
                 Ver detalhes e demonstração →
               </Link>
             </div>
           </div>
 
-          {/* Card 3: API RESTful .NET / EF Core */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between md:col-span-2">
+          {/* Card 3: FabDesk */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  FabDesk
+                </h3>
+                <span className="text-emerald-400 text-xs font-mono bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded-md">[SAAS]</span>
+              </div>
+              
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                Sistema web multi-tenant de helpdesk e gestão de tickets com ASP.NET Core, Entity Framework Core e Tailwind CSS.
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-6 text-xs text-cyan-200 font-mono">
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">ASP.NET</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">EF Core</span>
+                <span className="bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-700">Tailwind</span>
+              </div>
+            </div>
+            
+            <div className="border-t border-slate-800 pt-4">
+              <Link href="/fabdesk" className="text-cyan-400 hover:text-cyan-300 font-semibold text-xs hover:underline flex items-center gap-1.5">
+                Ver detalhes e demonstração →
+              </Link>
+            </div>
+          </div>
+
+          {/* Card 4: API RESTful .NET / EF Core (Largura Total na linha de baixo) */}
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-7 hover:border-cyan-500 transition-all duration-300 shadow-xl group flex flex-col justify-between md:col-span-2 lg:col-span-3">
             <div>
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
