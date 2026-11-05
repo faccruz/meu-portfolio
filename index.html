@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fábio Cruz Sistemas | Desenvolvedor Backend Sênior</title>
+<meta name="description" content="Portfólio de Fábio André Campos da Cruz: sistemas de gestão em C# e .NET, FabFit, FabAuto e FabDesk.">
+<link rel="icon" href="assets/fabfit-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#123C63; --blue:#3A83B7; --coral:#FF5A5F; --ink:#0E2238;
+  --ice:#EEF5FA; --paper:#FFFFFF; --muted:#4F6579; --line:#D5E2EC;
+  --slant:-12deg; --max:1080px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#E8F1F8;--paper:#0B1B2B;--ice:#102A42;--muted:#9DB3C6;--line:#21415E;--navy:#9CCBEA}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+img{max-width:100%}
+
+/* topo */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+header img{height:38px}
+nav{display:flex;gap:26px;font-weight:500;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--coral)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 120px}
+.hero::before{content:"";position:absolute;right:-8%;top:0;bottom:0;width:46%;background:var(--navy);transform:skewX(var(--slant));z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem);font-weight:800;color:var(--ink);max-width:14ch}
+.hero p{margin:22px 0 32px;max-width:48ch;color:var(--muted);font-size:1.12rem}
+.hero .mark{justify-self:center;width:min(300px,70%);background:#fff;border-radius:28px;padding:28px;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px) skewX(-6deg)}}
+@media (prefers-reduced-motion:reduce){.hero .mark{animation:none}html{scroll-behavior:auto}}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;text-decoration:none;font-family:Outfit,sans-serif;border:2px solid transparent;cursor:pointer;font-size:1rem}
+.btn.primary{background:var(--coral);color:#fff}
+.btn.primary:hover{background:#e84a50}
+.btn.ghost{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+
+/* seções */
+section{padding:84px 0}
+section.alt{background:var(--ice)}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin-bottom:44px}
+
+/* projetos */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px 28px 6px 28px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.logo{height:84px;width:auto;max-width:100%;align-self:flex-start}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:54px;height:56px}
+.brand b{font-family:Outfit,sans-serif;font-size:2rem;font-weight:700;color:var(--navy);letter-spacing:-.03em}
+.card h3{font-size:1.15rem;color:var(--blue)}
+.card p{color:var(--muted);font-size:.98rem}
+.card ul{padding-left:18px;color:var(--muted);font-size:.95rem}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tags span{font-size:.8rem;font-weight:600;padding:4px 11px;border-radius:99px;background:var(--ice);color:var(--navy)}
+.card a.link{font-weight:600;color:var(--coral);text-decoration:none}
+.auto-card{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--navy);color:#fff;border-radius:6px 28px 6px 28px;padding:28px 32px}
+.auto-card h3{color:#fff;font-size:1.3rem;margin-bottom:6px}
+.auto-card p{color:#CFE3F2}
+.auto-card .tags span{background:rgba(255,255,255,.14);color:#fff}
+.auto-card .ic{font-size:2.4rem;font-family:Outfit;font-weight:800;color:var(--coral)}
+
+/* currículo */
+.cv{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.cv h3{font-size:1.2rem;margin:0 0 14px;color:var(--navy)}
+.cv section,.cv .blk{padding:0;margin-bottom:34px}
+.facts{list-style:none;padding:0;color:var(--muted)}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line)}
+.facts strong{color:var(--ink);display:block;font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skills span{padding:6px 14px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-weight:500;font-size:.92rem}
+.area{border-left:4px solid var(--coral);padding:2px 0 2px 18px;margin-bottom:22px}
+.area b{font-family:Outfit;font-size:1.05rem}
+.area p{color:var(--muted);font-size:.97rem}
+
+/* contato */
+.contact{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.contact h2{color:#fff}
+.contact .lead{color:#CFE3F2}
+.contact .btn.ghost{border-color:#fff;color:#fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--navy)}
+footer{padding:28px 0;background:var(--ink);color:#9DB3C6;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer img{height:30px}
+
+@media (max-width:860px){
+  .hero .wrap,.cv,.projects{grid-template-columns:1fr}
+  .hero::before{width:70%;right:-30%;opacity:.12}
+  .auto-card{grid-template-columns:1fr}
+  nav{gap:16px;font-size:14px}
+}
+@media (max-width:520px){nav a:nth-child(n+4){display:none}}
+
+@media print{
+  header,.hero,#projetos,.contact,footer,.noprint{display:none!important}
+  section.alt{background:none;padding:0}
+  body{font-size:12pt;color:#000;background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#topo" aria-label="Fábio Cruz Sistemas"><img src="assets/fabiocruz-mark.png" alt="Fábio Cruz"></a>
+    <nav aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#curriculo">Currículo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Sistemas de gestão feitos para rodar todo dia.</h1>
+        <p>Sou Fábio Cruz, desenvolvedor backend sênior. Projeto e construo sistemas em C# e .NET para academias, oficinas e equipes de suporte, da modelagem do banco até o deploy.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="#curriculo">Ler currículo</a>
+        </div>
+      </div>
+      <img class="mark" src="assets/fabiocruz-logo.png" alt="Logotipo Fábio Cruz Sistemas">
+    </div>
+  </div>
+
+  <section id="projetos">
+    <div class="wrap">
+      <h2>Projetos</h2>
+      <p class="lead">Três produtos próprios, uma família de marcas com o mesmo F inclinado e um acento diferente para cada área.</p>
+
+      <div class="projects">
+        <article class="card">
+          <img class="logo" src="assets/fabfit-logo.png" alt="FabFit">
+          <h3>Gestão para academias</h3>
+          <p>Plataforma para controlar treinos, acompanhar métricas dos alunos e administrar licenças de uso.</p>
+          <ul><li>Fichas de treino</li><li>Evolução e métricas</li><li>Licenciamento</li></ul>
+          <div class="tags"><span>C#</span><span>.NET</span><span>Docker</span></div>
+          <!-- TODO: troque # pelo link do projeto -->
+          <a class="link" href="#">Saiba mais</a>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="assets/fabauto-logo.png" alt="FabAuto">
+          <h3>Gestão para oficinas mecânicas</h3>
+          <p>Sistema para organizar a rotina da oficina: clientes, veículos, ordens de serviço e histórico de atendimentos.</p>
+          <ul><li>Ordens de serviço</li><li>Cadastro de clientes e veículos</li><li>Funciona com banco local</li></ul>
+          <div class="tags"><span>.NET</span><span>SQLite</span><span>Clean Architecture</span></div>
+          <a class="link" href="#">Saiba mais</a>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="assets/fabdesk-logo.png" alt="FabDesk">
+          <h3>Helpdesk e chamados</h3>
+          <p>Sistema para abrir, acompanhar e resolver chamados de suporte com histórico completo de cada atendimento.</p>
+          <ul><li>Abertura e fila de chamados</li><li>Acompanhamento por status</li><li>Histórico por solicitante</li></ul>
+          <div class="tags"><span>C#</span><span>.NET</span><span>SQL Server</span></div>
+          <a class="link" href="#">Saiba mais</a>
+        </article>
+      </div>
+
+      <div class="auto-card">
+        <div class="ic" aria-hidden="true">n8n</div>
+        <div>
+          <h3>Automações sob medida</h3>
+          <p>Fluxos que ligam Google Workspace, Supabase e Telegram para tirar tarefas repetitivas do caminho.</p>
+          <div class="tags"><span>n8n</span><span>Google Workspace</span><span>Supabase</span><span>Telegram</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curriculo" class="alt">
+    <div class="wrap">
+      <h2>Currículo</h2>
+      <p class="lead">Fábio André Campos da Cruz. Desenvolvedor Backend Sênior em Votorantim, SP.</p>
+
+      <div class="cv">
+        <div>
+          <div class="blk">
+            <h3>Formação</h3>
+            <ul class="facts">
+              <li><strong>Análise de Sistemas</strong>Graduação</li>
+              <li><strong>Gestão de TI</strong>Pós-graduação</li>
+              <li><strong>Gestão de Projetos</strong>Pós-graduação</li>
+            </ul>
+          </div>
+          <div class="blk">
+            <h3>Tecnologias</h3>
+            <div class="skills">
+              <span>C#</span><span>.NET Core</span><span>VB.NET</span><span>Delphi</span>
+              <span>Entity Framework Core</span><span>SQL Server</span><span>PostgreSQL</span><span>SQLite</span>
+              <span>SAP Business One Service Layer</span><span>HanaSQL</span><span>Docker</span><span>n8n</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Atuação</h3>
+          <div class="area"><b>Backend e arquitetura</b><p>APIs e sistemas em C# e .NET Core com Clean Architecture e design modular, do legado em VB.NET e Delphi aos projetos novos.</p></div>
+          <div class="area"><b>Integração com ERP</b><p>Integrações com SAP Business One via Service Layer e consultas em HanaSQL.</p></div>
+          <div class="area"><b>Dados</b><p>Modelagem e consultas em SQL Server, PostgreSQL e SQLite, com acesso via Entity Framework Core.</p></div>
+          <div class="area"><b>Infraestrutura e automação</b><p>Conteinerização com Docker e automações em n8n. Home server próprio em Debian com CasaOS, Tailscale, Nextcloud, Nginx Proxy Manager e Uptime Kuma.</p></div>
+          <div class="area"><b>Gestão</b><p>Visão de gestão de TI e de projetos, aplicada no planejamento e na entrega dos meus produtos.</p></div>
+          <div class="btns noprint"><button class="btn primary" onclick="window.print()">Salvar currículo em PDF</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <h2>Vamos conversar?</h2>
+      <p class="lead">Conte o que você precisa e eu respondo com um caminho técnico claro.</p>
+      <div class="btns">
+        <!-- TODO: troque pelos seus dados reais -->
+        <a class="btn primary" href="mailto:seu@email.com">Enviar e-mail</a>
+        <a class="btn ghost" href="https://github.com/seu-usuario" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://linkedin.com/in/seu-usuario" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Fábio Cruz Sistemas</span>
+    <span>Votorantim, SP</span>
+  </div>
+</footer>
+<script>document.getElementById('ano').textContent=new Date().getFullYear()</script>
+</body>
+</html>
