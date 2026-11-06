@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FabDesk | Sistema de chamados de TI</title>
+<meta name="description" content="FabDesk: sistema de helpdesk que organiza chamados de TI, setores, categorias e acessos da equipe.">
+<link rel="icon" href="../assets/fabfit-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#123C63;--blue:#3A83B7;--coral:#FF5A5F;--ink:#0E2238;--ice:#EEF5FA;--muted:#4F6579;--line:#D5E2EC;--slant:-12deg;color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.top a.back{font-size:.95rem;color:var(--muted);text-decoration:none}
+.top a.back:hover{color:var(--coral)}
+.top img{height:34px;width:auto}
+
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font:600 1rem Outfit,sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--coral);color:#fff}
+.btn.primary:hover{background:#e84a50}
+.btn.ghost{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 96px}
+.hero::before{content:"";position:absolute;right:-10%;top:0;bottom:0;width:52%;background:var(--navy);transform:skewX(var(--slant))}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.hero .logo{width:min(240px,60%);margin-bottom:26px}
+.hero h1{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:800}
+.hero p{margin:20px 0 30px;color:var(--muted);font-size:1.12rem;max-width:44ch}
+.shot{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(14,34,56,.22)}
+.hero .shot{border-color:transparent}
+
+/* faixa */
+.strip{background:var(--coral);color:#fff}
+.strip .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px;font:600 1.05rem Outfit,sans-serif}
+
+section{padding:80px 0}
+section.alt{background:var(--ice)}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin-bottom:44px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.row.rev .txt{order:2}
+.row+.row{margin-top:84px}
+.txt h3{font-size:1.7rem;font-weight:700;margin-bottom:12px;color:var(--navy)}
+.txt p{color:var(--muted);margin-bottom:14px}
+.txt ul{padding-left:0;list-style:none}
+.txt li{padding:7px 0 7px 22px;position:relative}
+.txt li::before{content:"";position:absolute;left:0;top:.85em;width:10px;height:10px;background:var(--coral);transform:skewX(-12deg)}
+.row .shot{justify-self:center}
+.row .shot.small{max-width:360px}
+
+.meds{display:grid;grid-template-columns:1.3fr 1.7fr 1fr;gap:22px;align-items:end;margin-top:8px}
+.meds figure{display:flex;flex-direction:column;gap:12px}
+.meds figcaption{font:600 1rem Outfit,sans-serif;color:var(--navy)}
+.meds figcaption span{display:block;font:400 .92rem Figtree,sans-serif;color:var(--muted)}
+
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tools div{background:#fff;border:1px solid var(--line);border-radius:6px 20px 6px 20px;padding:18px 20px}
+.tools b{font-family:Outfit,sans-serif;display:block;color:var(--navy);margin-bottom:4px}
+.tools span{font-size:.93rem;color:var(--muted)}
+
+/* chamada final */
+.cta{background:var(--navy);color:#fff}
+.cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta h2{color:#fff}
+.cta p{color:#CFE3F2;margin-bottom:28px;max-width:46ch}
+.cta .shot{box-shadow:none}
+footer{padding:26px 0;background:var(--ink);color:#9DB3C6;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:#fff}
+
+/* formulário */
+dialog{border:0;border-radius:6px 28px 6px 28px;padding:0;width:min(520px,92vw);max-height:92vh;overflow:auto;color:var(--ink)}
+dialog::backdrop{background:rgba(14,34,56,.65)}
+.form{padding:30px}
+.form h3{font-size:1.5rem;margin-bottom:4px}
+.form .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.form label{display:block;font-weight:600;font-size:.92rem;margin:12px 0 5px}
+.form input,.form select,.form textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.form textarea{min-height:104px;resize:vertical}
+.form .actions{display:flex;gap:10px;margin-top:20px;align-items:center}
+.form .close{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-decoration:underline}
+.form .hp{position:absolute;left:-9999px}
+#msg{margin-top:14px;font-weight:600;min-height:1.4em}
+#msg.ok{color:#17803d}#msg.err{color:#c62828}
+
+@media (max-width:860px){
+  .hero .wrap,.row,.cta .wrap,.meds{grid-template-columns:1fr}
+  .hero::before{width:80%;right:-40%;opacity:.12}
+  .row.rev .txt{order:0}
+  .tools{grid-template-columns:1fr 1fr}
+}
+.pair{display:flex;flex-direction:column;gap:18px;align-items:center}
+.pair .shot.small{max-width:300px}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <a class="back" href="../">Voltar ao portfólio</a>
+  <img src="../assets/fabdesk-logo.png" alt="FabDesk">
+</div></div>
+
+
+<header class="hero"><div class="wrap">
+  <div>
+    <img class="logo" src="../assets/fabdesk-logo.png" alt="FabDesk">
+    <h1>Chamados de TI organizados, do pedido à solução.</h1>
+    <p>O FabDesk é o sistema de helpdesk que reúne abertura de chamados, acompanhamento por status, setores, categorias e acessos da sua equipe.</p>
+    <div class="btns">
+      <button class="btn primary" data-open>Pedir demonstração</button>
+      <a class="btn ghost" href="#recursos">Ver recursos</a>
+    </div>
+  </div>
+  <div class="shot"><img width="1362" height="642" data-img="dashboard" src="../assets/fabdesk/dashboard.webp" alt="Painel do FabDesk com total de chamados, em aberto, em andamento, concluídos e chamados recentes"></div>
+</div></header>
+
+<div class="strip"><div class="wrap">
+  <span>Abertura de chamados</span><span>Acompanhamento por status</span><span>Setores e categorias</span><span>Perfis de acesso</span>
+</div></div>
+
+<section id="recursos">
+<div class="wrap">
+  <h2>Suporte sem planilha e sem recado perdido</h2>
+  <p class="lead">Quem precisa de ajuda abre o chamado em segundos, e a equipe de TI enxerga tudo em um painel.</p>
+
+  <div class="row">
+    <div class="txt">
+      <h3>Abertura de chamado simples</h3>
+      <p>Um formulário direto para o usuário descrever o problema com o que a TI precisa saber.</p>
+      <ul><li>Assunto e descrição detalhada</li><li>Prioridade do chamado</li><li>Categoria, como hardware ou software</li></ul>
+    </div>
+    <div class="shot"><img width="682" height="535" data-img="chamado" src="../assets/fabdesk/chamado.webp" alt="Tela Abrir Novo Chamado"></div>
+  </div>
+
+  <div class="row rev">
+    <div class="txt">
+      <h3>Login e acompanhamento</h3>
+      <p>Cada pessoa entra com e-mail e senha e acompanha os chamados pelo painel, que mostra a situação das solicitações em tempo real.</p>
+      <ul><li>Total, em aberto, em andamento e concluídos</li><li>Status por chamado: em andamento, resolvido, fechado</li><li>Menu Meus Chamados para cada usuário</li></ul>
+    </div>
+    <div class="shot"><img width="452" height="422" data-img="login" src="../assets/fabdesk/login.webp" alt="Tela de login do FabDesk"></div>
+  </div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+  <h2>A TI organizada do seu jeito</h2>
+  <p class="lead">Defina os setores da empresa e as categorias que classificam os chamados.</p>
+
+  <div class="row">
+    <div class="txt">
+      <h3>Setores</h3>
+      <p>Cadastre os setores operacionais, como TI, Compras e Limpeza, com nome e descrição.</p>
+    </div>
+    <div class="pair">
+      <div class="shot"><img width="1117" height="220" data-img="setores" src="../assets/fabdesk/setores.webp" alt="Tela de gestão de setores"></div>
+      <div class="shot small"><img width="454" height="305" data-img="novo-setor" src="../assets/fabdesk/novo-setor.webp" alt="Janela Novo Setor"></div>
+    </div>
+  </div>
+
+  <div class="row rev">
+    <div class="txt">
+      <h3>Categorias</h3>
+      <p>Classifique os chamados de suporte, por exemplo Hardware e Software, para saber onde estão os problemas.</p>
+    </div>
+    <div class="shot"><img width="1125" height="175" data-img="categorias" src="../assets/fabdesk/categorias.webp" alt="Tela de gestão de categorias"></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="row">
+    <div class="txt">
+      <h3>Equipe e acessos</h3>
+      <p>Cada pessoa entra com o seu perfil e vê só o que precisa.</p>
+      <ul><li>Perfis: administrador, técnico e utilizador</li><li>Usuário ligado ao seu setor</li><li>Senha temporária no cadastro</li><li>Ativar ou desativar o acesso</li></ul>
+    </div>
+    <div class="pair">
+      <div class="shot"><img width="1060" height="362" data-img="usuarios" src="../assets/fabdesk/usuarios.webp" alt="Tela de gestão de utilizadores"></div>
+      <div class="shot small"><img width="443" height="420" data-img="novo-usuario" src="../assets/fabdesk/novo-usuario.webp" alt="Janela Novo Utilizador"></div>
+    </div>
+  </div>
+
+  <div class="row rev">
+    <div class="txt">
+      <h3>Empresa e e-mail configurados</h3>
+      <p>Registre os dados da empresa e configure o servidor de e-mail (SMTP) da TI. A própria tela traz o passo a passo para gerar a senha de aplicativo do Gmail.</p>
+    </div>
+    <div class="shot"><img width="1075" height="621" data-img="empresa" src="../assets/fabdesk/empresa.webp" alt="Tela de dados da empresa e configurações de SMTP"></div>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+  <div>
+    <h2>Quer ver o FabDesk funcionando?</h2>
+    <p>Conte um pouco sobre a sua equipe de TI. Eu respondo com uma demonstração e as condições de licença.</p>
+    <button class="btn primary" data-open>Entrar em contato</button>
+  </div>
+  <div class="shot" style="padding:32px"><img width="894" height="610" src="../assets/fabdesk-logo.png" alt="FabDesk"></div>
+</div>
+</section>
+
+<footer><div class="wrap">
+  <span>© <span id="ano"></span> Fábio Cruz Sistemas</span>
+  <a href="../">Ver outros projetos</a>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="ft">
+  <form class="form" id="f" novalidate>
+    <h3 id="ft">Fale com o Fábio</h3>
+    <p class="sub">Resposta por e-mail ou telefone, o que você preferir.</p>
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" autocomplete="name" required>
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+    <label for="tel">Telefone ou WhatsApp</label>
+    <input id="tel" name="telefone" type="tel" autocomplete="tel">
+    <label for="perfil">Você é</label>
+    <select id="perfil" name="perfil"><option>Equipe de TI</option><option>Empresa</option><option>Prestador de serviços de TI</option><option>Outro</option></select>
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" placeholder="Quantos usuários e setores? Quer uma demonstração?"></textarea>
+    <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="actions">
+      <button class="btn primary" type="submit" id="send">Enviar mensagem</button>
+      <button class="close" type="button" id="cls">Fechar</button>
+    </div>
+    <p id="msg" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
+
+<script>
+document.getElementById('ano').textContent=new Date().getFullYear();
+const dlg=document.getElementById('dlg'),f=document.getElementById('f'),msg=document.getElementById('msg'),send=document.getElementById('send');
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{msg.textContent='';msg.className='';dlg.showModal()}));
+document.getElementById('cls').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!f.nome.value.trim()||!f.email.validity.valid||!f.email.value){msg.className='err';msg.textContent='Preencha seu nome e um e-mail válido.';return}
+  const d=Object.fromEntries(new FormData(f));
+  d._subject='Contato FabDesk pelo site';d._template='table';d._captcha='false';
+  send.disabled=true;send.textContent='Enviando...';msg.className='';msg.textContent='';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/fabio.cruz.sistemas@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});
+    const j=await r.json();
+    if(!r.ok||(j.success!=='true'&&j.success!==true))throw 0;
+    msg.className='ok';msg.textContent='Mensagem enviada. Obrigado, respondo em breve.';f.reset();
+  }catch(_){
+    msg.className='err';msg.innerHTML='Não foi possível enviar agora. Escreva para <a href="mailto:fabio.cruz.sistemas@gmail.com">fabio.cruz.sistemas@gmail.com</a>.';
+  }
+  send.disabled=false;send.textContent='Enviar mensagem';
+});
+</script>
+</body>
+</html>
