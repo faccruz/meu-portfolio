@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FabFit | Controle de alunos para academias e personal trainers</title>
+<meta name="description" content="FabFit: programa para Windows que organiza cadastro de alunos, medições, dores, presença e faturamento.">
+<link rel="icon" href="../assets/fabfit-mark.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#123C63;--blue:#3A83B7;--coral:#FF5A5F;--ink:#0E2238;--ice:#EEF5FA;--muted:#4F6579;--line:#D5E2EC;--slant:-12deg;color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.top a.back{font-size:.95rem;color:var(--muted);text-decoration:none}
+.top a.back:hover{color:var(--coral)}
+.top img{height:34px;width:auto}
+
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font:600 1rem Outfit,sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--coral);color:#fff}
+.btn.primary:hover{background:#e84a50}
+.btn.ghost{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn.ghost:hover{background:var(--blue);color:#fff}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 96px}
+.hero::before{content:"";position:absolute;right:-10%;top:0;bottom:0;width:52%;background:var(--navy);transform:skewX(var(--slant))}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.hero .logo{width:min(240px,60%);margin-bottom:26px}
+.hero h1{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:800}
+.hero p{margin:20px 0 30px;color:var(--muted);font-size:1.12rem;max-width:44ch}
+.shot{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 40px rgba(14,34,56,.22)}
+.hero .shot{border-color:transparent}
+
+/* faixa */
+.strip{background:var(--coral);color:#fff}
+.strip .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px;font:600 1.05rem Outfit,sans-serif}
+
+section{padding:80px 0}
+section.alt{background:var(--ice)}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin-bottom:44px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.row.rev .txt{order:2}
+.row+.row{margin-top:84px}
+.txt h3{font-size:1.7rem;font-weight:700;margin-bottom:12px;color:var(--navy)}
+.txt p{color:var(--muted);margin-bottom:14px}
+.txt ul{padding-left:0;list-style:none}
+.txt li{padding:7px 0 7px 22px;position:relative}
+.txt li::before{content:"";position:absolute;left:0;top:.85em;width:10px;height:10px;background:var(--coral);transform:skewX(-12deg)}
+.row .shot{justify-self:center}
+.row .shot.small{max-width:360px}
+
+.meds{display:grid;grid-template-columns:1.3fr 1.7fr 1fr;gap:22px;align-items:end;margin-top:8px}
+.meds figure{display:flex;flex-direction:column;gap:12px}
+.meds figcaption{font:600 1rem Outfit,sans-serif;color:var(--navy)}
+.meds figcaption span{display:block;font:400 .92rem Figtree,sans-serif;color:var(--muted)}
+
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tools div{background:#fff;border:1px solid var(--line);border-radius:6px 20px 6px 20px;padding:18px 20px}
+.tools b{font-family:Outfit,sans-serif;display:block;color:var(--navy);margin-bottom:4px}
+.tools span{font-size:.93rem;color:var(--muted)}
+
+/* chamada final */
+.cta{background:var(--navy);color:#fff}
+.cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta h2{color:#fff}
+.cta p{color:#CFE3F2;margin-bottom:28px;max-width:46ch}
+.cta .shot{box-shadow:none}
+footer{padding:26px 0;background:var(--ink);color:#9DB3C6;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+footer a{color:#fff}
+
+/* formulário */
+dialog{border:0;border-radius:6px 28px 6px 28px;padding:0;width:min(520px,92vw);max-height:92vh;overflow:auto;color:var(--ink)}
+dialog::backdrop{background:rgba(14,34,56,.65)}
+.form{padding:30px}
+.form h3{font-size:1.5rem;margin-bottom:4px}
+.form .sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.form label{display:block;font-weight:600;font-size:.92rem;margin:12px 0 5px}
+.form input,.form select,.form textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.form textarea{min-height:104px;resize:vertical}
+.form .actions{display:flex;gap:10px;margin-top:20px;align-items:center}
+.form .close{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-decoration:underline}
+.form .hp{position:absolute;left:-9999px}
+#msg{margin-top:14px;font-weight:600;min-height:1.4em}
+#msg.ok{color:#17803d}#msg.err{color:#c62828}
+
+@media (max-width:860px){
+  .hero .wrap,.row,.cta .wrap,.meds{grid-template-columns:1fr}
+  .hero::before{width:80%;right:-40%;opacity:.12}
+  .row.rev .txt{order:0}
+  .tools{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <a class="back" href="../">Voltar ao portfólio</a>
+  <img src="../assets/fabfit-logo.png" alt="FabFit">
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <img class="logo" src="../assets/fabfit-logo.png" alt="FabFit">
+    <h1>Seus alunos, medições e mensalidades em um só lugar.</h1>
+    <p>O FabFit é o programa para Windows que organiza cadastro, avaliação física, presença e faturamento de academias e personal trainers.</p>
+    <div class="btns">
+      <button class="btn primary" data-open>Pedir demonstração</button>
+      <a class="btn ghost" href="#recursos">Ver recursos</a>
+    </div>
+  </div>
+  <div class="shot"><img width="1365" height="719" data-img="dashboard" src="../assets/fabfit/dashboard.webp" alt="Painel do FabFit com totais de alunos, medições, aniversariantes e comparativo de faturamento"></div>
+</div></header>
+
+<div class="strip"><div class="wrap">
+  <span>Cadastro de alunos</span><span>Medições e dores</span><span>Presença e agenda</span><span>Faturamento e relatórios</span>
+</div></div>
+
+<section id="recursos">
+<div class="wrap">
+  <h2>Tudo o que a rotina do treino pede</h2>
+  <p class="lead">Telas simples, feitas para o dia a dia: do cadastro do aluno ao fechamento do mês.</p>
+
+  <div class="row">
+    <div class="txt">
+      <h3>Cadastro completo do aluno</h3>
+      <p>Cada aluno com seus dados, foto e combinado financeiro, sempre à mão.</p>
+      <ul><li>Nome, nascimento, e-mail e telefone</li><li>Frequência cardíaca máxima (FCMAX)</li><li>Mensalidade e dia de pagamento</li><li>Alunos ativos e inativos, com filtro na lista</li></ul>
+    </div>
+    <div class="shot"><img width="622" height="494" data-img="alunos" src="../assets/fabfit/alunos.webp" alt="Tela de cadastro de alunos"></div>
+  </div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+  <h2>Medições que mostram a evolução</h2>
+  <p class="lead">Registre por data e acompanhe o histórico de cada aluno em tabela.</p>
+  <div class="meds">
+    <figure><div class="shot"><img width="566" height="407" data-img="sinais" src="../assets/fabfit/sinais.webp" alt="Tela de sinais vitais"></div><figcaption>Sinais vitais<span>BPM, saturação, pressão, temperatura e glicemia</span></figcaption></figure>
+    <figure><div class="shot"><img width="833" height="484" data-img="circunferencias" src="../assets/fabfit/circunferencias.webp" alt="Tela de circunferências"></div><figcaption>Circunferências<span>Pescoço, tórax, cintura, braços, coxas e panturrilhas</span></figcaption></figure>
+    <figure><div class="shot"><img width="345" height="414" data-img="dobras" src="../assets/fabfit/dobras.webp" alt="Tela de dobras cutâneas"></div><figcaption>Dobras cutâneas<span>Tríceps, bíceps, peitoral, coxa e mais</span></figcaption></figure>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="row rev">
+    <div class="txt">
+      <h3>Dores e esforço de cada aluno</h3>
+      <p>Pergunte como o aluno está e registre em segundos, com uma escala de 0 a 10.</p>
+      <ul><li>Dor por região: cabeça, ombros, cotovelos, punhos, quadril, coluna, joelhos e tornozelos</li><li>PSE, a percepção subjetiva de esforço</li><li>Histórico com data e hora</li></ul>
+    </div>
+    <div class="shot"><img width="942" height="597" data-img="dores" src="../assets/fabfit/dores.webp" alt="Tela de dores com controles deslizantes por região do corpo e PSE"></div>
+  </div>
+
+  <div class="row">
+    <div class="txt">
+      <h3>Presença sem papel</h3>
+      <p>Marque quem veio, anote o motivo de quem faltou e consulte a lista quando precisar.</p>
+      <ul><li>Presença por aluno e por data</li><li>Campo de motivo e observações</li><li>Lista de presença sempre atualizada</li></ul>
+    </div>
+    <div class="shot small"><img width="393" height="534" data-img="presenca" src="../assets/fabfit/presenca.webp" alt="Tela de presença"></div>
+  </div>
+
+  <div class="row rev">
+    <div class="txt">
+      <h3>Calendário de aulas</h3>
+      <p>Veja as aulas de cada dia com aluno, horário e contato, e use o botão Sincronizar para manter a agenda em dia.</p>
+    </div>
+    <div class="shot"><img width="724" height="296" data-img="calendario" src="../assets/fabfit/calendario.webp" alt="Calendário de aulas"></div>
+  </div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+  <h2>Mensalidades sob controle</h2>
+  <p class="lead">O painel inicial mostra alunos, medições, aniversariantes do dia e o comparativo de faturamento entre o mês anterior e o atual.</p>
+  <div class="tools">
+    <div><b>Faturamento</b><span>Acompanhe o que entra no mês.</span></div>
+    <div><b>Baixa de pagamento</b><span>Registre quem já pagou.</span></div>
+    <div><b>Relatórios</b><span>Visão geral e relatório de aula.</span></div>
+    <div><b>Treinos</b><span>Crie e exporte o treino do aluno.</span></div>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+  <div>
+    <h2>Quer ver o FabFit funcionando?</h2>
+    <p>Conte um pouco sobre a sua academia ou o seu trabalho. Eu respondo com uma demonstração e as condições de licença.</p>
+    <button class="btn primary" data-open>Entrar em contato</button>
+  </div>
+  <div class="shot"><img width="534" height="267" data-img="splash" src="../assets/fabfit/splash.webp" alt="Tela de abertura do FabFit"></div>
+</div>
+</section>
+
+<footer><div class="wrap">
+  <span>© <span id="ano"></span> Fábio Cruz Sistemas</span>
+  <a href="../">Ver outros projetos</a>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="ft">
+  <form class="form" id="f" novalidate>
+    <h3 id="ft">Fale com o Fábio</h3>
+    <p class="sub">Resposta por e-mail ou telefone, o que você preferir.</p>
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" autocomplete="name" required>
+    <label for="email">E-mail</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+    <label for="tel">Telefone ou WhatsApp</label>
+    <input id="tel" name="telefone" type="tel" autocomplete="tel">
+    <label for="perfil">Você é</label>
+    <select id="perfil" name="perfil"><option>Academia</option><option>Personal trainer</option><option>Estúdio</option><option>Outro</option></select>
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" placeholder="Quantos alunos você atende? Quer uma demonstração?"></textarea>
+    <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="actions">
+      <button class="btn primary" type="submit" id="send">Enviar mensagem</button>
+      <button class="close" type="button" id="cls">Fechar</button>
+    </div>
+    <p id="msg" role="status" aria-live="polite"></p>
+  </form>
+</dialog>
+
+<script>
+document.getElementById('ano').textContent=new Date().getFullYear();
+const dlg=document.getElementById('dlg'),f=document.getElementById('f'),msg=document.getElementById('msg'),send=document.getElementById('send');
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{msg.textContent='';msg.className='';dlg.showModal()}));
+document.getElementById('cls').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!f.nome.value.trim()||!f.email.validity.valid||!f.email.value){msg.className='err';msg.textContent='Preencha seu nome e um e-mail válido.';return}
+  const d=Object.fromEntries(new FormData(f));
+  d._subject='Contato FabFit pelo site';d._template='table';d._captcha='false';
+  send.disabled=true;send.textContent='Enviando...';msg.className='';msg.textContent='';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/fabio.cruz.sistemas@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});
+    const j=await r.json();
+    if(!r.ok||(j.success!=='true'&&j.success!==true))throw 0;
+    msg.className='ok';msg.textContent='Mensagem enviada. Obrigado, respondo em breve.';f.reset();
+  }catch(_){
+    msg.className='err';msg.innerHTML='Não foi possível enviar agora. Escreva para <a href="mailto:fabio.cruz.sistemas@gmail.com">fabio.cruz.sistemas@gmail.com</a>.';
+  }
+  send.disabled=false;send.textContent='Enviar mensagem';
+});
+</script>
+</body>
+</html>
