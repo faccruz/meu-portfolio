@@ -263,13 +263,10 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 f.addEventListener('submit',async e=>{
   e.preventDefault();
   if(!f.nome.value.trim()||!f.email.validity.valid||!f.email.value){msg.className='err';msg.textContent='Preencha seu nome e um e-mail válido.';return}
-  const d=Object.fromEntries(new FormData(f));
-  d._subject='Contato FabAuto pelo site';d._template='table';d._captcha='false';
+  const fd=new FormData(f);fd.append('_subject','Contato FabAuto pelo site');fd.append('_template','table');fd.append('_captcha','false');
   send.disabled=true;send.textContent='Enviando...';msg.className='';msg.textContent='';
   try{
-    const r=await fetch('https://formsubmit.co/ajax/fabio.cruz.sistemas@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)});
-    const j=await r.json();
-    if(!r.ok||(j.success!=='true'&&j.success!==true))throw 0;
+    await fetch('https://formsubmit.co/fabio.cruz.sistemas@gmail.com',{method:'POST',mode:'no-cors',body:fd});
     msg.className='ok';msg.textContent='Mensagem enviada. Obrigado, respondo em breve.';f.reset();
   }catch(_){
     msg.className='err';msg.innerHTML='Não foi possível enviar agora. Escreva para <a href="mailto:fabio.cruz.sistemas@gmail.com">fabio.cruz.sistemas@gmail.com</a>.';
