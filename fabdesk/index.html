@@ -248,6 +248,7 @@ dialog::backdrop{background:rgba(14,34,56,.65)}
 
 <script>
 document.getElementById('ano').textContent=new Date().getFullYear();
+const KEY='9d465c36-c0ed-42e7-8db9-7c137f6b8a34'; // chave pública do Web3Forms
 const dlg=document.getElementById('dlg'),f=document.getElementById('f'),msg=document.getElementById('msg'),send=document.getElementById('send');
 document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{msg.textContent='';msg.className='';dlg.showModal()}));
 document.getElementById('cls').addEventListener('click',()=>dlg.close());
@@ -255,10 +256,13 @@ dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 f.addEventListener('submit',async e=>{
   e.preventDefault();
   if(!f.nome.value.trim()||!f.email.validity.valid||!f.email.value){msg.className='err';msg.textContent='Preencha seu nome e um e-mail válido.';return}
-  const fd=new FormData(f);fd.append('_subject','Contato FabDesk pelo site');fd.append('_template','table');fd.append('_captcha','false');
+  const payload={access_key:KEY,subject:'Contato FabDesk pelo site',from_name:'Site FabDesk',name:f.nome.value,email:f.email.value,phone:f.tel.value,perfil:f.perfil.value,message:f.mensagem.value,botcheck:f._honey.value};
   send.disabled=true;send.textContent='Enviando...';msg.className='';msg.textContent='';
   try{
-    await fetch('https://formsubmit.co/fabio.cruz.sistemas@gmail.com',{method:'POST',mode:'no-cors',body:fd});
+    if(KEY.indexOf('COLE')===0)throw 0;
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
+    const j=await r.json();
+    if(!j.success)throw 0;
     msg.className='ok';msg.textContent='Mensagem enviada. Obrigado, respondo em breve.';f.reset();
   }catch(_){
     msg.className='err';msg.innerHTML='Não foi possível enviar agora. Escreva para <a href="mailto:fabio.cruz.sistemas@gmail.com">fabio.cruz.sistemas@gmail.com</a>.';
